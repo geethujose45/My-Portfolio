@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="./HeaderFooter.css">
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+    
+     @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700");
+ 
+
+
+        
+    .gallery {
+  --s: 130px; /* control the size of the images*/
+  
+  display: grid;
+  gap: 5px;
+  position: relative;
+  padding: 20px;
+  
+}
+.gallery input {
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+  inset: calc(50% - var(--s)/3);
+  cursor: pointer;
+  --g: linear-gradient(#fff 0 0) no-repeat;
+  background: var(--g) 50%/60% 3px,var(--g) 50%/3px 60%,#cd9904 ;
+  transition: 1.5s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.gallery > img {
+  width: var(--s);
+  aspect-ratio: 1;
+  grid-area: 1/1;
+  border-radius: 50%;
+  object-fit: cover;
+  transform: scale(.5);
+  transition: 1s calc((var(--i) - 1)*.1s);
+}
+.gallery > img:nth-of-type(1) {--i:1;}
+.gallery > img:nth-of-type(2) {--i:2;}
+.gallery > img:nth-of-type(3) {--i:3;}
+.gallery > img:nth-of-type(4) {--i:4;}
+.gallery > img:nth-of-type(5) {--i:5;}
+.gallery > img:nth-of-type(6) {--i:6;}
+.gallery > img:nth-of-type(7) {--i:7;}
+.gallery > img:nth-of-type(8) {--i:8;}
+.gallery > img:nth-of-type(9) {--i:9;}
+
+.gallery > input:checked ~ img {
+  transform: 
+    rotate(calc(var(--i)* 360deg/8)) translate(calc(1.5*var(--s))) 
+    rotate(calc(var(--i)*-360deg/8));
+}
+.gallery > input:checked {
+  transform: rotate(135deg)
+}
+ /* Services Section */
+ .new-section {
+ 
+    border-radius: 1rem;
+    background: linear-gradient(152deg, rgba(255, 255, 255, 0.15) 7.12%, rgba(255, 255, 255, 0.07) 94.15%);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 5.8rem 0; /* Adjust padding as needed */
+}
+
+.section-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
+    
+}
+.section-item:after {
+    content: '';
+    display: block;
+    height: 8px;
+    width: 100%;
+    position: absolute;
+    bottom: -50px; /* Adjust as needed for spacing */
+    left: 0;
+    background-image: url('./images/border-bottom.svg');
+    background-repeat: no-repeat;
+    
+    background-position: center;
+}
+
+.service_title.gs_reveal {
+    text-align: center;
+    margin-bottom: 80px; /* Adjust spacing after the title */
+}
+
+/* Add common spacing after every section item */
+.section-item {
+    margin-bottom: 100px; /* Adjust the spacing between items as needed */
+}
+
+/* Modify the section-item:after to be centered */
+.section-item:after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* Add animation to new-section items */
+.new-section .section-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.new-section .section-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.item-image {
+    width: 530px;
+    height: 230px;
+    border-radius: 15px;
+    object-fit: cover;
+
+}
+
+.item-content {
+    width: 60%;
+    padding: 10px 36px;
+    color: #e6f1ff;
+}
+
+.item-content h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #ffd700; /* Title color */
+}
+
+.item-content p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.left {
+    order: 1;
+}
+
+.right {
+    order: 2;
+}
+
+
+
+.section-item:nth-child(odd) .item-image {
+    order: 1;
+}
+
+.section-item:nth-child(odd) .item-content {
+    order: 2;
+}
+
+.section-item:nth-child(even) .item-image {
+    order: 2;
+}
+
+.section-item:nth-child(even) .item-content {
+    order: 1;
+}
+
+@media (max-width: 768px) {
+    .section-item {
+        flex-direction: column;
+    }
+
+    .item-image, .item-content {
+        width: 100%;
+        order: initial;
+    }
+
+    .gradient-underline {
+        top: 100%;
+        height: 3px;
+        bottom: 0;
+    }
+}
+
+h3 {
+  color: #fff;
+  font-family: MinervaModern;
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 4.6rem;
+  text-transform: capitalize;
+
+
+  span {
+    background-image: linear-gradient(91deg, #f2c74b 1.07%, #cd9904 39.56%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>  
+                <div class="logo"> 
+                    <a href="index.html">
+                        <img src="./images/LogoGJ.png" alt="Your Logo" class="logo-image">  
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="./index.html">Home</a>
+                    <a href="/about.html">About</a>
+                    <a href="./myworks.html">My Works</a>
+                    <a href="./contact.html">Contact</a>
+                </div>
+                 <!-- Hamburger menu for mobile -->
+                 <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>I create amazing web experiences</p>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </div>
+        <div class="hero-image">
+           <!-- partial:index.partial.html -->
+<div class="gallery">
+    <input type="checkbox" >
+    <img src="https://picsum.photos/id/1028/300/300" alt="a forest after an apocalypse">
+    <img src="https://picsum.photos/id/15/300/300" alt="a waterfall and many rocks">
+    <img src="https://picsum.photos/id/1040/300/300" alt="a house on a mountain">
+    <img src="https://picsum.photos/id/106/300/300" alt="sime pink flowers">
+    <img src="https://picsum.photos/id/136/300/300" alt="big rocks with some trees">
+    <img src="https://picsum.photos/id/1039/300/300" alt="a waterfall, a lot of tree and a great view from the sky">
+    <img src="https://picsum.photos/id/110/300/300" alt="a cool landscape">
+    <img src="https://picsum.photos/id/1047/300/300" alt="inside a town between two big buildings">
+    
+    
+    
+  </div>
+
+        </div>
+    </section>
+
+
+
+    <section class="new-section">
+        <div class="container">
+            <div class="service_title gs_reveal">
+                <h3>Our <span>Test</span></h3>
+                <p>We set new benchmarks in personal 
+                    travel through our exceptional air <br>charter services.
+                     We offer an array of personalized services<br> which includes</p>
+              </div>
+            <!-- First Item -->
+            <div class="section-item">
+                <img src="./images/blog_Worksoft_Certify_banner_desk_0.jpg" alt="Description 1" class="item-image left">
+                <div class="item-content right">
+                    <h3>Title 1</h3>
+                    <p>We set new benchmarks in personal travel through our exceptional air
+                        charter services. We offer an array of personalized services
+                        which includes
+                        
+                         </p>
+                </div>
+                <div class="gradient-underline"></div>
+            </div>
+    
+            <!-- Second Item -->
+            <div class="section-item">
+                <img src="./images/blog_Worksoft_Certify_banner_desk_0.jpg" alt="Description 2" class="item-image right">
+                <div class="item-content left">
+                    <h3>Title 2</h3>
+                    <p>Description for the second item goes here. Description for the second item goes here. Description for the second item goes here.</p>
+                </div>
+                <div class="gradient-underline"></div>
+            </div>
+    
+            <!-- Third Item -->
+            <div class="section-item">
+                <img src="./images/blog_Worksoft_Certify_banner_desk_0.jpg" alt="Description 3" class="item-image left">
+                <div class="item-content right">
+                    <h3>Title 3</h3>
+                    <p>Description for the third item goes here. Description for the second item goes here. Description for the second item goes here.</p>
+                </div>
+                <div class="gradient-underline"></div>
+            </div>
+               <!-- four Item -->
+            <div class="section-item">
+                <img src="./images/blog_Worksoft_Certify_banner_desk_0.jpg" alt="Description 3" class="item-image left">
+                <div class="item-content right">
+                    <h3>Title 4</h3>
+                    <p>Description for the third item goes here. Description for the second item goes here. Description for the second item goes here.</p>
+                </div>
+                <div class="gradient-underline"></div>
+            </div>  <!-- five Item -->
+            <div class="section-item">
+                <img src="./images/blog_Worksoft_Certify_banner_desk_0.jpg" alt="Description 3" class="item-image left">
+                <div class="item-content right">
+                    <h3>Title 5</h3>
+                    <p>Description for the third item goes here. Description for the second item goes here. Description for the second item goes here.</p>
+                </div>
+                <div class="gradient-underline"></div>
+            </div>  <!-- six Item -->
+            <div class="section-item">
+                <img src="./images/blog_Worksoft_Certify_banner_desk_0.jpg" alt="Description 3" class="item-image left">
+                <div class="item-content right">
+                    <h3>Title 6</h3>
+                    <p>Description for the third item goes here. Description for the second item goes here. Description for the second item goes here.</p>
+                </div>
+                <div class="gradient-underline"></div>
+            </div>  <!-- seven Item -->
+            <div class="section-item">
+                <img src="./images/blog_Worksoft_Certify_banner_desk_0.jpg" alt="Description 3" class="item-image left">
+                <div class="item-content right">
+                    <h3>Title 7</h3>
+                    <p>Description for the third item goes here. Description for the second item goes here. Description for the second item goes here.</p>
+                </div>
+                <div class="gradient-underline"></div>
+            </div>
+            <!-- Eight Item -->
+            <div class="section-item">
+                <img src="./images/blog_Worksoft_Certify_banner_desk_0.jpg" alt="Description 3" class="item-image left">
+                <div class="item-content right">
+                    <h3>Title 8</h3>
+                    <p> for the third item goes here. Description for the second item goes here. Description for the second item goes here.</p>
+                </div>
+                <div class="gradient-underline"></div>
+            </div>
+    
+    
+            <!-- Add more items as needed -->
+        </div>
+    </section>
+    
+
+
+
+
+
+    
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" class="facebook-icon">
+                    <img src="./images/icons8-facebook-50.png" alt="Facebook Icon" class="social-icon">
+                </a>
+                <a href="#" class="twitter-icon">
+                    <img src="./images/icons8-twitter-32.png" alt="Twitter Icon" class="social-icon">
+                </a>
+                <a href="#" class="linkedin-icon">
+                    <img src="./images/icons8-linked-in-50.png" alt="LinkedIn Icon" class="social-icon">
+                </a>
+                <a href="#" class="instagram-icon">
+                    <img src="./images/icons8-instagram-50.png" alt="Instagram Icon" class="social-icon">
+                </a>
+            </div>
+            <div class="footer-logo">
+                <img src="./images/LogoGJ.png" alt="Footer Logo">
+            </div>
+            <div class="email">
+                test@yahoo.com
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Add animation class to section items
+            const sectionItems = document.querySelectorAll('.new-section .section-item');
+            sectionItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('visible');
+                }, index * 200); // Staggered animation delay
+            });
+        
+           // Link gallery items to section items
+    const galleryImages = document.querySelectorAll('.gallery img');
+    galleryImages.forEach((image, index) => {
+        image.addEventListener('click', () => {
+            const targetIndex = Math.min(index, sectionItems.length - 1);
+            const targetItem = sectionItems[targetIndex];
+            targetItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+    });
+});
+        </script>
+        
+</body>
+</html>

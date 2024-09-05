@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="./HeaderFooter.css">
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+    @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700");
+
+ 
+
+    .hero {
+    
+        justify-content: center;
+        
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 1200px;
+        margin-top: 10rem;
+    }
+
+    .contact-container {
+        display: flex;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.15) 4.64%, rgba(255, 255, 255, 0.03) 99.92%);
+        border-radius: 10px;
+        overflow: hidden;
+        width: 100%;
+
+    }
+
+    .contact-info, .contact-form {
+        flex: 1;
+        padding: 40px;
+    }
+
+    .contact-info h2 {
+    font-size: 2.5em;   
+    margin-bottom: 30px;
+    background-image: linear-gradient(91deg, #f2c74b 1.07%, #cd9904 39.56%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: MinervaModern;
+    font-weight: 400;
+    
+   
+    }
+
+    .info-item {
+        display: flex;
+        margin-bottom: 20px;
+        position: relative; /* Added for positioning the underline */
+        padding-bottom: 20px; /* Added space for the underline */
+    }
+
+    /* Underline styles */
+    .info-item::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 10px; /* Adjust based on your image */
+        background-image: url('./images/border-bottom.svg');
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+    }
+
+    .info-item i {
+        font-size: 24px;
+      
+        margin-right: 15px;
+    }
+
+    .info-item h3 {
+        
+    margin-bottom: 5px;
+    font-family: Poppins;
+    font-size: 25px;
+    font-weight: 500;
+    line-height: 2.4rem;
+    background: linear-gradient(87deg, #F2C74B 3.51%, #CD9904 98.47%);
+    background-clip: text;
+    
+    -webkit-text-fill-color: transparent;
+    text-transform: capitalize;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        background-color: rgba(255, 255, 255, 0.2);
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+      
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .submit-btn {
+        background: linear-gradient(87deg, #F2C74B 3.51%, #CD9904 98.47%);
+        color: #141829;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+        align-self: flex-end;
+        width: fit-content;
+    }
+
+    .submit-btn:hover {
+        background-color: #e6c200;
+    }
+
+    .submit-btn i {
+        margin-left: 10px;
+    }
+   .contact-form {
+    margin-top: 50px;
+   }
+   .contact-form textarea {
+    height: 15vh;
+   }
+
+    /* Responsive styles */
+    @media (max-width: 900px) {
+        .container {
+            max-width: 90%;
+        }
+
+        .nav-links {
+            display: none;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            width: 100%;
+            background-color: #0a192f;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+
+        .nav-links a {
+            margin: 10px 0;
+        }
+
+        .hamburger {
+            display: flex;
+        }
+
+        .hero {
+            height: auto;
+            padding-top: 100px;
+        }
+
+        .contact-container {
+            flex-direction: column;
+        }
+
+        .contact-info, .contact-form {
+            width: 100%;
+        }
+    }
+    .info-item img{
+        width: 2rem;
+    height: 2rem;
+    -o-object-fit: contain;
+    object-fit: contain;
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>  
+                <div class="logo"> 
+                    <a href="index.html">
+                        <img src="./images/LogoGJ.png" alt="Your Logo" class="logo-image">  
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="./index.html">Home</a>
+                    <a href="/about.html">About</a>
+                    <a href="./myworks.html">My Works</a>
+                    <a href="./contact.html">Contact</a>
+                </div>
+                 <!-- Hamburger menu for mobile -->
+                 <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <main class="main-content">
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h2>Let's connect!</h2>
+                        <div class="info-item">
+                            <img src="./images/icons/House_Remove.png" alt="House icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Address</h3>
+                                <p>lorem ipsum<br>
+                                test address here<br>
+                                test address here,<br>
+                                test address here,<br>
+                                Kochi - 682024</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <img src="./images/icons/Phone.png" alt="Phone icon">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h3>Contact</h3>
+                                <p>+test number here<br>
+                                +91 00000000 00</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <img src="./images/icons/wt.png" alt="wt icon">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <h3>Whatsapp</h3>
+                            <p>+000000 00000 0</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <img src="./images/icons/Mail.png" alt="mail icon">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h3>Email</h3>
+                                <p>test@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact-form" action="https://formspree.io/f/xgvwknwv" method="POST" id="contact-form">
+                        <p>Name</p>
+                        <input type="text" name="name" placeholder="Name" required>
+                        <p>Email</p>
+                        <input type="email" name="email" placeholder="Email" required>
+                        <p>Mobile</p>
+                        <input type="tel" name="mobile" placeholder="Mobile Number" required>
+                        <p>Message</p>
+                        <textarea name="message" placeholder="Message" required></textarea>
+                        <button type="submit" class="submit-btn">Submit <i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" class="facebook-icon">
+                    <img src="./images/icons8-facebook-50.png" alt="Facebook Icon" class="social-icon">
+                </a>
+                <a href="#" class="twitter-icon">
+                    <img src="./images/icons8-twitter-32.png" alt="Twitter Icon" class="social-icon">
+                </a>
+                <a href="#" class="linkedin-icon">
+                    <img src="./images/icons8-linked-in-50.png" alt="LinkedIn Icon" class="social-icon">
+                </a>
+                <a href="#" class="instagram-icon">
+                    <img src="./images/icons8-instagram-50.png" alt="Instagram Icon" class="social-icon">
+                </a>
+            </div>
+            <div class="footer-logo">
+                <img src="./images/LogoGJ.png" alt="Footer Logo">
+            </div>
+            <div class="email">
+                test@yahoo.com
+            </div>
+        </div>
+    </footer>
+ <!-- Success Modal -->
+ <div id="successModal" class="modal modal-success">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-header">
+            <h2>Success!</h2>
+        </div>
+        <div class="modal-body">
+            <div class="icon-container">
+                <img src="./images/icons8-tick-64.png" alt="Success" class="modal-icon">
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Failure Modal -->
+<div id="failureModal" class="modal modal-failure">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-header">
+            <h2>Failed</h2>
+        </div>
+        <div class="modal-body">
+            <div class="icon-container">
+                <img src="./images/icons8-x-50.png" alt="Failure" class="modal-icon">
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+        </div>
+    </div>
+</div>
+
+
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+    <script>
+        // JavaScript for hamburger menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

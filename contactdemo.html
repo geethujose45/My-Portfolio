@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      /* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-success .modal-content,
+.modal-failure .modal-content {
+    background: none;
+    border: none;
+    width: 550px;
+    padding: 0;
+    position: relative;
+    overflow: visible;
+    margin: 5% auto;
+}
+
+.modal-success .modal-header,
+.modal-failure .modal-header {
+    background-color: white;
+    padding: 40px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.modal-success .modal-header h2,
+.modal-failure .modal-header h2 {
+    text-align: center;
+}
+
+.modal-success .modal-header h2 {
+    color: #00a8ff;
+    margin: 20px;
+    font-size: 24px;
+}
+
+.modal-failure .modal-header h2 {
+    color: #ff4d4d;
+    margin: 20px;
+    font-size: 24px;
+}
+
+.modal-success .modal-body {
+    background: linear-gradient(to bottom right, #00a8ff, #0077b3);
+    color: white;
+    padding: 20px;
+    padding-top: 50px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.modal-failure .modal-body {
+    background: linear-gradient(to bottom right, #ff4d4d, #cc0000);
+    color: white;
+    padding: 20px;
+    padding-top: 50px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.modal-success .icon-container,
+.modal-failure .icon-container {
+    position: absolute;
+    top: 115px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-success .icon-container {
+    background: linear-gradient(to bottom right, #0077b3, #00a8ff);
+}
+
+.modal-failure .icon-container {
+    background: linear-gradient(to bottom right, #cc0000, #ff4d4d);
+}
+
+.modal-success .modal-icon,
+.modal-failure .modal-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.modal-success p,
+.modal-failure p {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #888;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="./images/LogoGJ.png" alt="Logo">
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="myworks.html">My Works</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li> <button id="download-cv">Download CV</button></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="main-content">
+        <h1 class="page-title">Contact Me</h1>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p>Feel free to reach out for any inquiries or collaboration opportunities.</p>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> test@yahoo.com</li>
+                    <li><i class="fas fa-phone"></i> +1 (123) 456-7890</li>
+                    <li><i class="fas fa-map-marker-alt"></i> City, Country</li>
+                </ul>
+            </div>
+            <form class="contact-form" action="https://formspree.io/f/xgvwknwv" method="POST" id="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject">
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" class="facebook-icon">
+                    <img src="./images/icons8-facebook-50.png" alt="Facebook Icon" class="social-icon">
+                </a>
+                <a href="#" class="twitter-icon">
+                    <img src="./images/icons8-twitter-32.png" alt="Twitter Icon" class="social-icon">
+                </a>
+                <a href="#" class="linkedin-icon">
+                    <img src="./images/icons8-linked-in-50.png" alt="LinkedIn Icon" class="social-icon">
+                </a>
+                <a href="#" class="instagram-icon"> 
+                    <img src="./images/icons8-instagram-50.png" alt="Instagram Icon" class="social-icon">
+                </a>
+            </div>
+            <div class="footer-logo">
+                <img src="./images/LogoGJ.png" alt="Footer Logo">
+            </div>
+            <div class="email">
+                test@yahoo.com
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Success Modal -->
+<div id="successModal" class="modal modal-success">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-header">
+            <h2>Success!</h2>
+        </div>
+        <div class="modal-body">
+            <div class="icon-container">
+                <img src="./images/icons8-tick-64.png" alt="Success" class="modal-icon">
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Failure Modal -->
+<div id="failureModal" class="modal modal-failure">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="modal-header">
+            <h2>Failed</h2>
+        </div>
+        <div class="modal-body">
+            <div class="icon-container">
+                <img src="./images/icons8-x-50.png" alt="Failure" class="modal-icon">
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+        </div>
+    </div>
+</div>
+
+  
+
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</body>
+</html>

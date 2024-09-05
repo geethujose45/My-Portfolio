@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css"><link rel="stylesheet" href="./styles.css">
+    <style>
+    
+     @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700");
+ 
+
+body {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 23px;
+  font-family: "Poppins", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a:hover {
+  text-decoration: none;
+  
+}
+
+    
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0a192f;
+            color: #e6f1ff;
+        }
+        .container {
+            max-width: 72%;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+            margin-top: 13px;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        .nav-links a {
+            color: #e6f1ff;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            
+            align-items: center;
+            justify-content: space-between;
+           
+            background-size: cover;
+            position: relative;
+            padding: 0 20px;
+            max-width: 75%;
+            margin: 0 auto;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .hero-content p {
+            text-align: left;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ffd700;
+            color: #0a192f;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #e6c200;
+        }
+       
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+            }
+            .hero-content, .hero-service {
+                margin-bottom: 20px;
+            }
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            .hero-service img {
+                width: 95%;
+                height: 95%;
+                padding: 1px 13px;
+                border-radius: 50%;
+            }
+            
+        }
+
+        
+   
+ 
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Your Name</div>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>I create amazing web experiences</p>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </div>
+        <div class="hero-image">
+
+    
+    
+  </div>
+        </div>
+    </section>
+
+    
+
+
+
+
+
+    
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" class="facebook-icon">
+                    <img src="./images/icons8-facebook-50.png" alt="Facebook Icon" class="social-icon">
+                </a>
+                <a href="#" class="twitter-icon">
+                    <img src="./images/icons8-twitter-32.png" alt="Twitter Icon" class="social-icon">
+                </a>
+                <a href="#" class="linkedin-icon">
+                    <img src="./images/icons8-linked-in-50.png" alt="LinkedIn Icon" class="social-icon">
+                </a>
+                <a href="#" class="instagram-icon">
+                    <img src="./images/icons8-instagram-50.png" alt="Instagram Icon" class="social-icon">
+                </a>
+            </div>
+            <div class="footer-logo">
+                <img src="./images/LogoGJ.png" alt="Footer Logo">
+            </div>
+            <div class="email">
+                test@yahoo.com
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

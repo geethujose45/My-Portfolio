@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="./HeaderFooter.css">
+    
+    <style>
+    
+     @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700");
+ 
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+body .testimonial {
+  padding: 100px 0;
+}
+body .testimonial .row .tabs {
+  all: unset;
+  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+}
+body .testimonial .row .tabs li {
+  all: unset;
+  display: block;
+  position: relative;
+}
+body .testimonial .row .tabs li.active::before {
+  position: absolute;
+  content: "";
+  width: 50px;
+  height: 50px;
+  background-color: #ffd700;
+  border-radius: 50%;
+}
+body .testimonial .row .tabs li.active::after {
+  position: absolute;
+  content: "";
+  width: 30px;
+  height: 30px;
+  background-color: #ffd700;
+  border-radius: 50%;
+}
+body .testimonial .row .tabs li:nth-child(1) {
+  align-self: flex-end;
+}
+body .testimonial .row .tabs li:nth-child(1)::before {
+  left: 64%;
+  bottom: -50px;
+}
+body .testimonial .row .tabs li:nth-child(1)::after {
+  left: 97%;
+  bottom: -81px;
+}
+body .testimonial .row .tabs li:nth-child(1) figure img {
+  margin-left: auto;
+}
+body .testimonial .row .tabs li:nth-child(2) {
+  align-self: flex-start;
+}
+body .testimonial .row .tabs li:nth-child(2)::before {
+  right: -65px;
+  top: 50%;
+}
+body .testimonial .row .tabs li:nth-child(2)::after {
+  bottom: 101px;
+  border-radius: 50%;
+  right: -120px;
+}
+body .testimonial .row .tabs li:nth-child(2) figure img {
+  margin-right: auto;
+  max-width: 300px;
+  width: 100%;
+  margin-top: -50px;
+}
+body .testimonial .row .tabs li:nth-child(3) {
+  align-self: flex-end;
+}
+body .testimonial .row .tabs li:nth-child(3)::before {
+  right: -10px;
+  top: -66%;
+}
+body .testimonial .row .tabs li:nth-child(3)::after {
+  top: -130px;
+  border-radius: 50%;
+  right: -46px;
+}
+body .testimonial .row .tabs li:nth-child(3) figure img {
+  margin-left: auto;
+  margin-top: -50px;
+}
+body .testimonial .row .tabs li:nth-child(3):focus {
+  border: 10px solid red;
+}
+body .testimonial .row .tabs li figure {
+  position: relative;
+}
+body .testimonial .row .tabs li figure img {
+  display: block;
+}
+.testimonial .row .tabs li figure::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: 1; /* Ensure it's above other elements */
+    width: 100%;
+    height: 100%;
+    border: 2px solid #ffd700;
+    border-radius: 50%;
+    transform: scale(1);
+    transition: transform 0.3s;
+}
+
+body .testimonial .row .tabs li figure:hover::after {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+body .testimonial .row .tabs.carousel-indicators li.active figure::after {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+body .testimonial .row .carousel > h3 {
+  font-size: 20px;
+  line-height: 1.45;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+body .testimonial .row .carousel h1 {
+  font-size: 40px;
+  line-height: 1.225;
+  margin-top: 23px;
+  font-weight: 700;
+  margin-bottom: 0;
+  color: #ffd700;
+}
+body .testimonial .row .carousel .carousel-indicators {
+  all: unset;
+  padding-top: 43px;
+  display: flex;
+  list-style: none;
+}
+body .testimonial .row .carousel .carousel-indicators li {
+  background: #fff;
+  background-clip: padding-box;
+  height: 2px;
+}
+body .testimonial .row .carousel .carousel-inner .carousel-item .quote-wrapper {
+  margin-top: 42px;
+}
+body .testimonial .row .carousel .carousel-inner .carousel-item .quote-wrapper p {
+  font-size: 18px;
+  line-height: 1.72222;
+  font-weight: 500;
+  color:#fff ;
+}
+body .testimonial .row .carousel .carousel-inner .carousel-item .quote-wrapper h3 {
+  color: #ffd700;
+  font-weight: 700;
+  margin-top: 37px;
+  font-size: 20px;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
+
+@media only screen and (max-width: 1300px) {
+  body .testimonial .row .tabs {
+    margin-right: 25px;
+  }
+}
+    
+
+        .about-section {
+        padding: 60px 0;
+        background-color: #0a192f;
+        color: #e6f1ff;
+    }
+    .about-container {
+        max-width: 89%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .about-content {
+        flex: 1;
+        padding-right: 30px;
+    }
+    .about-content h2 {
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+    .about-content h3 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        color: #ffd700;
+    }
+    .about-content p {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+    .about-images {
+        flex: 1;
+      /*  display: flex;
+        align-items: flex-start;*/
+        position: relative;
+    }
+    .about-image {
+        position: relative;
+        max-width: 45%;
+        transform: rotate(-25deg);
+    }
+    .about-image img {
+        width: 100%;
+        height: auto;
+        border-top: 8px solid #ede5e5;
+        border-left: 8px solid #ede5e5;
+        border-right: 8px solid #ede5e5;
+        border-bottom: 10px solid #ede5e5;
+        border-radius: 5px;
+    }
+    .rotated-down {
+        position: absolute;
+        top: 60%;
+    left: 50%;
+    transform: rotate(4deg);
+    }
+    .image-label {
+        position: absolute;
+        background-color: #0a192f;
+        color: #ffd700;
+        padding: 15px;
+        border-radius: 50%;
+        font-size: 16px;
+        border: 2px solid #ffd700;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .efficiency {
+        top: -40px;
+        left: -40px;
+    }
+    .comfort {
+        bottom: -40px;
+        left: -40px;
+    }
+    .safety {
+        top: -40px;
+        right: -40px;
+    }
+    .hero-image {
+        border-radius: 50%;
+        border: 2px solid #ffd700;
+        padding: 1px 15px 50px 15px; /* spacing between image and border */
+    }
+    .hero-image img {
+        width: 35rem;
+        height: 35rem;
+        border-radius: 50%;
+    }
+       /* Media Queries for responsive adjustments */
+@media (max-width: 768px) {
+  .hero-image img {
+    width: 100%; /* Full width for smaller screens */
+    height: auto; /* Maintain aspect ratio */
+  }
+  .about-container {
+    flex-direction: column; /* Stack content vertically */
+  }
+  .about-content {
+    padding-right: 0; /* Remove padding on small screens */
+    text-align: center; /* Center text for better readability */
+  }
+  .about-images {
+    margin-top: 20px; /* Add spacing between content and images */
+  }
+}
+ 
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>  
+                <div class="logo"> 
+                    <a href="index.html">
+                        <img src="./images/LogoGJ.png" alt="Your Logo" class="logo-image">  
+                    </a>
+                </div>
+                <div class="nav-links">
+                    <a href="./index.html">Home</a>
+                    <a href="/about.html">About</a>
+                    <a href="./myworks.html">My Works</a>
+                    <a href="./contact.html">Contact</a>
+                </div>
+                 <!-- Hamburger menu for mobile -->
+                 <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>I create amazing web experiences</p>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </div>
+        <div class="hero-image">
+            <img src="./images/blog_Worksoft_Certify_banner_desk_0.jpg" alt="Your Image">
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>About</h2>
+                <h3>Your Company</h3>
+                <p>Experience seamless travel with our private jet charter services. We redefine luxury with a curated selection of jets, ensuring comfort and style. Our commitment to excellence includes personalized service, 24/7 support, and stringent safety procedures. Swift and hassle-free, we bid farewell to commercial aviation's delays.</p>
+            </div>
+            <div class="about-images">
+                <div class="about-image">
+                    <img src="./images/blog_Worksoft_Certify_banner_desk_0.jpg" alt="Image 1">
+                    <div class="image-label efficiency">Efficiency</div>
+                    <div class="image-label comfort">Comfort</div>
+                </div>
+                <div class="about-image rotated-down">
+                    <img src="./images/blog_Worksoft_Certify_banner_desk_0.jpg" alt="Image 2">
+                    <div class="image-label safety">Safety</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <section class="testimonial">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 d-none d-lg-block">
+                    <ol class="carousel-indicators tabs">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+                            <figure>
+                                <img src="https://livedemo00.template-help.com/wt_62267_v8/prod-20823-one-service/images/testimonials-01-179x179.png" class="img-fluid" alt="">
+                            </figure>
+                        </li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1">
+                            <figure>
+                                <img src="https://livedemo00.template-help.com/wt_62267_v8/prod-20823-one-service/images/testimonials-02-306x306.png" class="img-fluid" alt="">
+                            </figure>
+                        </li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2">
+                            <figure>
+                                <img src="https://livedemo00.template-help.com/wt_62267_v8/prod-20823-one-service/images/testimonials-03-179x179.png" class="img-fluid" alt="">
+                            </figure>
+                        </li>
+                    </ol>
+                </div>
+                <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                    <div id="carouselExampleIndicators" data-interval="false" class="carousel slide" data-ride="carousel">
+                        <h3>WHAT OUR CLIENTS SAY</h3>
+                        <h1>TESTIMONIALS</h1>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="quote-wrapper">
+                                    <p>I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends!</p>
+                                    <h3>peter lee</h3>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="quote-wrapper">
+                                    <p>I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends!</p>
+                                    <h3>test lee</h3>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <div class="quote-wrapper">
+                                    <p>I have tried a lot of food delivery services but Plate is something out of this world! Their food is really healthy and it tastes great, which is why I recommend this company to all my friends!</p>
+                                    <h3>test!@# lee</h3>
+                                </div>
+                            </div>
+                        </div>
+                        <ol class="carousel-indicators indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" class="facebook-icon">
+                    <img src="./images/icons8-facebook-50.png" alt="Facebook Icon" class="social-icon">
+                </a>
+                <a href="#" class="twitter-icon">
+                    <img src="./images/icons8-twitter-32.png" alt="Twitter Icon" class="social-icon">
+                </a>
+                <a href="#" class="linkedin-icon">
+                    <img src="./images/icons8-linked-in-50.png" alt="LinkedIn Icon" class="social-icon">
+                </a>
+                <a href="#" class="instagram-icon">
+                    <img src="./images/icons8-instagram-50.png" alt="Instagram Icon" class="social-icon">
+                </a>
+            </div>
+            <div class="footer-logo">
+                <img src="./images/LogoGJ.png" alt="Footer Logo">
+            </div>
+            <div class="email">
+                test@yahoo.com
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js'></script>
+<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script><script  src="./script.js"></script>
+    <script>
+    
+    $(document).ready(function(){
+  $(".testimonial .indicators li").click(function(){
+    var i = $(this).index();
+    var targetElement = $(".testimonial .tabs li");
+    targetElement.eq(i).addClass('active');
+    targetElement.not(targetElement[i]).removeClass('active');
+            });
+            $(".testimonial .tabs li").click(function(){
+                var targetElement = $(".testimonial .tabs li");
+                targetElement.addClass('active');
+                targetElement.not($(this)).removeClass('active');
+            });
+        });
+$(document).ready(function(){
+    $(".slider .swiper-pagination span").each(function(i){
+        $(this).text(i+1).prepend("0");
+    });
+});
+
+    
+    
+        gsap.from('.hero-content', {opacity: 0, y: 50, duration: 1, delay: 0.5});
+
+        // ScrollMagic for service images with bounce effect
+        var controller = new ScrollMagic.Controller();
+
+        // Adding bounce effect to hero section image
+        var heroImage = document.querySelector('.hero-image img');
+        var heroBounce = gsap.timeline();
+        heroBounce.from(heroImage, {y: -200, opacity: 0, duration: 1, ease: "bounce.out"});
+        heroBounce.to(heroImage, {y: 0, duration: 0.2, ease: "bounce.out", repeat: 4, repeatDelay: 0.1});
+
+        new ScrollMagic.Scene({
+            triggerElement: heroImage,
+            triggerHook: 0.5,
+            reverse: false
+        })
+        .setTween(heroBounce)
+        .addTo(controller);
+
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'><link rel="stylesheet" href="./style.css"><link rel="stylesheet" href="./styles.css">
+    <style>
+    
+     @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700");
+ 
+
+body {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 23px;
+  font-family: "Poppins", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a:hover {
+  text-decoration: none;
+  
+}
+
+    
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #0a192f;
+            color: #e6f1ff;
+        }
+        .container {
+            max-width: 72%;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        header {
+            position: absolute;
+            width: 100%;
+            z-index: 10;
+            margin-top: 13px;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        .nav-links a {
+            color: #e6f1ff;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        .hero {
+            height: 100vh;
+            display: flex;
+            
+            align-items: center;
+            justify-content: space-between;
+           
+            background-size: cover;
+            position: relative;
+            padding: 0 20px;
+            max-width: 75%;
+            margin: 0 auto;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .hero-content p {
+            text-align: left;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ffd700;
+            color: #0a192f;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #e6c200;
+        }
+       
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+            }
+            .hero-content, .hero-service {
+                margin-bottom: 20px;
+            }
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            .hero-service img {
+                width: 95%;
+                height: 95%;
+                padding: 1px 13px;
+                border-radius: 50%;
+            }
+            
+        }
+
+        
+    .gallery {
+  --s: 130px; /* control the size of the images*/
+  
+  display: grid;
+  gap: 5px;
+  position: relative;
+  padding: 20px;
+  
+}
+.gallery input {
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+  inset: calc(50% - var(--s)/3);
+  cursor: pointer;
+  --g: linear-gradient(#fff 0 0) no-repeat;
+  background: var(--g) 50%/60% 3px,var(--g) 50%/3px 60%,#222;
+  transition: 1.5s;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.gallery > img {
+  width: var(--s);
+  aspect-ratio: 1;
+  grid-area: 1/1;
+  border-radius: 50%;
+  object-fit: cover;
+  transform: scale(.5);
+  transition: 1s calc((var(--i) - 1)*.1s);
+}
+.gallery > img:nth-of-type(1) {--i:1;}
+.gallery > img:nth-of-type(2) {--i:2;}
+.gallery > img:nth-of-type(3) {--i:3;}
+.gallery > img:nth-of-type(4) {--i:4;}
+.gallery > img:nth-of-type(5) {--i:5;}
+.gallery > img:nth-of-type(6) {--i:6;}
+.gallery > img:nth-of-type(7) {--i:7;}
+.gallery > img:nth-of-type(8) {--i:8;}
+.gallery > img:nth-of-type(9) {--i:9;}
+
+.gallery > input:checked ~ img {
+  transform: 
+    rotate(calc(var(--i)* 360deg/8)) translate(calc(1.5*var(--s))) 
+    rotate(calc(var(--i)*-360deg/8));
+}
+.gallery > input:checked {
+  transform: rotate(135deg)
+}
+
+/* New section styles */
+/* New section styles */
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800&display=swap");
+
+.new-section {
+    font-family: "Montserrat", sans-serif;
+    background: var(--grey);
+    overflow: hidden;
+}
+
+.new-section :root {
+    --blue: #131661;
+    --grey: #ecebee;
+    --grey2: #bfbfbf;
+    --pink: #d50e38;
+}
+
+.new-section * {
+    box-sizing: border-box;
+}
+
+.new-section .stage {
+    position: relative;
+    height: 580px;
+    width: 1000px;
+    margin: auto;
+    background: var(--grey);
+    overflow: hidden;
+    box-shadow: 0px 18px 43px -18px rgba(30, 31, 38, 0.2117647059);
+}
+
+.new-section input[type=checkbox] {
+    position: absolute;
+    z-index: 3;
+    display: none;
+}
+
+.new-section input[type=checkbox]:not(:checked) + div + div .illustration {
+    transform: scale(0);
+    animation: braaaains 2s 1.2s steps(54, end) forwards;
+}
+
+.new-section input[type=checkbox]:checked + div + div .stage_inner__logo {
+    color: white;
+}
+
+.new-section input[type=checkbox]:checked + div + div .menu_part {
+    background: white;
+}
+
+.new-section input[type=checkbox]:checked + div + div .stage_inner__article h2,
+.new-section input[type=checkbox]:checked + div + div .stage_inner__article h3,
+.new-section input[type=checkbox]:checked + div + div .stage_inner__article p,
+.new-section input[type=checkbox]:checked + div + div .stage_inner__articleTwo h2,
+.new-section input[type=checkbox]:checked + div + div .stage_inner__articleTwo h3,
+.new-section input[type=checkbox]:checked + div + div .stage_inner__articleTwo p {
+    opacity: 1;
+    left: 0px !important;
+    transition: all 0.7s 0.3s cubic-bezier(0.5, 0.005, 0.075, 0.985) !important;
+}
+
+.new-section input[type=checkbox]:checked + div + div .stage_inner__list {
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.new-section input[type=checkbox]:checked + div + div .stage_inner__centerbox {
+    transition: all 0.7s cubic-bezier(0.5, 0.005, 0.075, 0.985);
+    width: 25%;
+    left: 0;
+    height: 100%;
+}
+
+.new-section input[type=checkbox]:checked + div + div .stage_inner__centerbox .text {
+    margin-top: 300px;
+    width: 93%;
+    transition: all 0.7s cubic-bezier(0.5, 0.005, 0.075, 0.985);
+}
+
+.new-section input[type=checkbox]:checked + div + div .stage_inner__centerbox label {
+    opacity: 0;
+    position: absolute;
+    left: 20px;
+    z-index: 3;
+    top: 20px;
+    width: 130px;
+    bottom: auto;
+}
+
+.new-section input[type=checkbox]:checked + div + div .stage_inner__centerbox label i {
+    opacity: 0;
+}
+
+.new-section input[type=checkbox]:checked + div + div .stage_inner__centerbox .illustration {
+    transform: scale(0.75);
+    left: -16px;
+    transition: all 0.7s cubic-bezier(0.5, 0.005, 0.075, 0.985), transform 0.1s;
+    top: 60px;
+}
+
+.new-section input[type=checkbox]:checked + div + div .stage_inner__footer {
+    bottom: -100px;
+}
+
+.new-section input[type=checkbox]:checked + div + div .stage_inner__bottom {
+    bottom: 0;
+    transition: all 0.7s 0.2s cubic-bezier(0.5, 0.005, 0.075, 0.985);
+}
+
+.new-section input[type=checkbox]:checked + div + div .stage_inner__bottom .link {
+    opacity: 1;
+    top: 0;
+}
+
+.new-section input[type=checkbox]:checked + div + div h5 {
+    left: -1000px;
+}
+
+.new-section input[type=checkbox]:checked + div + div .stage_inner__right {
+    width: 75%;
+    height: 75%;
+    transition: all 0.7s cubic-bezier(0.5, 0.005, 0.075, 0.985);
+}
+
+.new-section input[type=checkbox]:checked + div + div .stage_inner__right .fade:nth-of-type(1) {
+    transition: all 0.25s 0.125s;
+}
+
+.new-section input[type=checkbox]:checked + div + div .stage_inner__right .fade:nth-of-type(2) {
+    transition: all 0.25s 0.15s;
+}
+
+.new-section input[type=checkbox]:checked + div + div .stage_inner__right .fade:nth-of-type(3) {
+    transition: all 0.25s 0.175s;
+}
+
+.new-section input[type=checkbox]:checked + div + div .stage_inner__right .fade:nth-of-type(4) {
+    transition: all 0.25s 0.2s;
+}
+
+.new-section input[type=checkbox]:checked + div + div .stage_inner__right input {
+    transition: all 0s 0s cubic-bezier(0.5, 0.005, 0.075, 0.985) !important;
+    width: 40%;
+}
+
+.new-section input[type=checkbox]:checked + div + div .stage_inner__right h2 {
+    left: -100px;
+    opacity: 0;
+}
+
+.new-section input[type=checkbox]:checked + div + div .stage_inner__right .link {
+    opacity: 0;
+    left: -100px;
+}
+
+.new-section .stage_bg {
+    height: 75vh;
+    background: var(--blue);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.new-section .stage_inner {
+    position: absolute;
+    left: 0;
+    height: 580px;
+    right: 0;
+    box-shadow: 0px 18px 43px -18px rgba(30, 31, 38, 0.2117647059);
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1000px;
+    background: #ecebee;
+    overflow: hidden;
+}
+
+.new-section .stage_inner__logo {
+    font-weight: 800;
+    pointer-events: none;
+    color:#102c57;
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+    transition: all 0s 0.32s;
+}
+
+.new-section .stage_inner__logo span {
+    position: Relative;
+    left: -4px;
+    color: #ffd700;;
+}
+
+.new-section .stage_inner__list {
+    position: absolute;
+    opacity: 1;
+    transition: all 0.3s 1.2s;
+    left: 50%;
+    top: 85px;
+    color:#0a192f;
+}
+
+.new-section .stage_inner__list li {
+    list-style-type: none;
+    text-transform: uppercase;
+    margin: 30px 0;
+    font-size: 12px;
+}
+
+.new-section .stage_inner__list li:nth-of-type(2) {
+    margin-bottom: 235px;
+}
+
+.new-section .stage_inner__menu {
+    position: relative;
+    z-index: 1;
+    padding: 30px 0 30px 0;
+}
+
+.new-section .stage_inner__menu .menu {
+    position: relative;
+    top: 5px;
+    cursor: pointer;
+}
+
+.new-section .stage_inner__menu .menu_part {
+    width: 20px;
+    height: 2px;
+    transition: all 0s 0.32s;
+    margin-bottom: 2px;
+    position: relative;
+    background:#102c57;
+}
+
+.new-section .stage_inner__menu .menu_part:nth-of-type(1) {
+    width: 14px;
+}
+
+.new-section .stage_inner__menu .menu_part:nth-of-type(3) {
+    width: 12px;
+    left: 12px;
+}
+
+.new-section .stage_inner__logo, .new-section .stage_inner__menu {
+    float: left;
+}
+
+.new-section .stage_inner h5 {
+    color: white;
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    text-transform: uppercase;
+    z-index: 0;
+    font-size: 80px;
+    transform: translateY(calc(50% + 90px));
+    margin: 0;
+    transition: all 0.7s cubic-bezier(0.5, 0.005, 0.075, 0.985);
+    line-height: 0;
+}
+
+.new-section .stage_inner__article {
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    padding: 30px 80px 30px 30px;
+}
+
+.new-section .stage_inner__article h2 {
+    float: none !important;
+    padding: 20px 0 !important;
+    opacity: 0;
+    position: relative !important;
+    left: 50px !important;
+    transition: all 0.7s 0s cubic-bezier(0.5, 0.005, 0.075, 0.985) !important;
+}
+
+.new-section .stage_inner__article h3 {
+    float: none;
+    font-size: 30px;
+    font-weight: 800;
+    width: 100%;
+    opacity: 0;
+    margin: 0 0 10px 0;
+    transition: all 0.7s 0s cubic-bezier(0.5, 0.005, 0.075, 0.985);
+    position: relative;
+    left: 50px;
+    color: #ffd700;;
+}
+
+.new-section .stage_inner__article p {
+    color: var(--blue);
+    opacity: 0;
+    line-height: 20px;
+    font-size: 14px !important;
+    transition: all 0.7s 0s cubic-bezier(0.5, 0.005, 0.075, 0.985);
+    position: relative;
+    left: 50px;
+}
+
+.new-section .stage_inner__articleTwo {
+    position: absolute;
+    width: 350px;
+    left: calc(60% + 120px);
+    padding: 150px 80px 30px 0px;
+}
+
+.new-section .stage_inner__articleTwo h2 {
+    float: none !important;
+    padding: 20px 0 !important;
+    opacity: 0;
+    position: relative !important;
+    left: 50px !important;
+    transition: all 0.7s 0.1s cubic-bezier(0.5, 0.005, 0.075, 0.985) !important;
+}
+
+.new-section .stage_inner__articleTwo h3 {
+    float: none;
+    font-size: 14px;
+    font-weight: 800;
+    width: 100%;
+    opacity: 0;
+    margin: 0 0 10px 0;
+    transition: all 0.7s 0.1s cubic-bezier(0.5, 0.005, 0.075, 0.985);
+    position: relative;
+    left: 50px;
+    color: #ffd700;;
+}
+
+.new-section .stage_inner__articleTwo p {
+    color: var(--blue);
+    opacity: 0;
+    line-height: 20px;
+    font-size: 14px !important;
+    transition: all 0.7s 0.1s cubic-bezier(0.5, 0.005, 0.075, 0.985);
+    position: relative;
+    left: 50px;
+}
+
+.new-section .stage_inner__centerbox {
+    position: absolute;
+    left: 160px;
+    height: 160px;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #102c57;
+    padding: 16px;
+    transition: all 0.7s 0.3s cubic-bezier(0.5, 0.005, 0.075, 0.985);
+    width: 50%;
+}
+
+.new-section .stage_inner__centerbox .arrow label {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.2392156863);
+    right: 0;
+    bottom: 0;
+    font-size: 12px;
+    opacity: 1;
+    padding: 10px 20px;
+    z-index: 1;
+    color: rgb(138, 29, 29);
+    cursor: pointer;
+    transition: all 0.23s, opacity 0s;
+}
+
+.new-section .stage_inner__centerbox .arrow label:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.new-section .stage_inner__centerbox .illustration {
+    width: 270px;
+    height: 280px;
+    position: absolute;
+    transition: all 0.7s 0.3s cubic-bezier(0.5, 0.005, 0.075, 0.985), transform 0.1s 0.7s;
+    left: -50px;
+    top: -70px;
+    background-size: 14730px !important;
+    background: url(/images/);
+}
+
+@keyframes braaaains {
+    0% {
+        background-position: 0 0;
+        transform: scale(0);
+    }
+    10% {
+        transform: scale(1);
+    }
+    100% {
+        background-position: 14730px 0;
+        transform: scale(1);
+    }
+}
+
+.new-section .stage_inner__centerbox .text {
+    float: right;
+    transition: all 0.7s 0.3s cubic-bezier(0.5, 0.005, 0.075, 0.985);
+    width: 50%;
+}
+
+.new-section .stage_inner__centerbox .title {
+    color: #ffd700;;
+    font-weight: 800;
+    font-size: 40px;
+}
+
+.new-section .stage_inner__centerbox .articles {
+    color: white;
+    font-size: 12px;
+    opacity: 0.5;
+}
+.new-section .stage_inner h2 {
+        text-transform: uppercase;
+        color: var(--grey2);
+        font-size: 13px;
+        padding: 20px;
+        float: right;
+        width: 220px;
+        position: relative;
+        left: 0;
+        transition: all 0.25s;
+        clear: both;
+    }
+
+    .new-section .stage_inner p {
+        color: black;
+        font-weight: 500;
+        font-size: 11px;
+    }
+
+    .new-section .stage_inner p.date {
+        color: var(--grey2);
+        font-size: 10px;
+    }
+
+    .new-section .stage_inner a {
+        color: var(--blue);
+        text-decoration: none;
+        font-weight: 800;
+        font-size: 12px;
+    }
+
+    .new-section .stage_inner__bottom .link {
+        width: 33.33%;
+        position: relative;
+        float: left;
+        opacity: 0;
+        transition: all 1s 0.2s cubic-bezier(0.5, 0.005, 0.075, 0.985);
+        top: 220px;
+    }
+
+    .new-section .stage_inner__bottom .link:nth-of-type(1) {
+        transition: all 0.4s 0.2s cubic-bezier(0.5, 0.005, 0.075, 0.985);
+    }
+
+    .new-section .stage_inner__bottom .link:nth-of-type(2) {
+        transition: all 0.4s 0.3s cubic-bezier(0.5, 0.005, 0.075, 0.985);
+    }
+
+    .new-section .stage_inner__bottom .link:nth-of-type(3) {
+        transition: all 0.4s 0.4s cubic-bezier(0.5, 0.005, 0.075, 0.985);
+    }
+
+    .new-section .stage_inner__bottom .link:nth-of-type(4) {
+        transition: all 0.4s 0.5s cubic-bezier(0.5, 0.005, 0.075, 0.985);
+    }
+
+    
+
+
+
+
+ 
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Your Name</div>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>I create amazing web experiences</p>
+            <a href="#contact" class="btn">Get in Touch</a>
+        </div>
+        <div class="hero-image">
+           <!-- partial:index.partial.html -->
+<div class="gallery">
+    <input type="checkbox" >
+    <img src="https://picsum.photos/id/1028/300/300" alt="a forest after an apocalypse">
+    <img src="https://picsum.photos/id/15/300/300" alt="a waterfall and many rocks">
+    <img src="https://picsum.photos/id/1040/300/300" alt="a house on a mountain">
+    <img src="https://picsum.photos/id/106/300/300" alt="sime pink flowers">
+    <img src="https://picsum.photos/id/136/300/300" alt="big rocks with some trees">
+    <img src="https://picsum.photos/id/1039/300/300" alt="a waterfall, a lot of tree and a great view from the sky">
+    <img src="https://picsum.photos/id/110/300/300" alt="a cool landscape">
+    <img src="https://picsum.photos/id/1047/300/300" alt="inside a town between two big buildings">
+    
+    
+    
+  </div>
+        </div>
+    </section>
+
+    <section class="new-section">
+      <div class='stage'>
+        <input id='trigger' type='checkbox'>
+        <div class='stage_bg'></div>
+        <div class='stage_inner'>
+          <div class='stage_inner__logo'>
+            THE
+            <span> Topics</span>
+          </div>
+          <div class='stage_inner__menu'>
+            <div class='menu'>
+              <div class='menu_part'></div>
+              <div class='menu_part'></div>
+              <div class='menu_part'></div>
+            </div>
+          </div>
+          <!--  <div class='stage_inner__footer'>
+            <i class='fab fa-facebook'></i>
+            <i class='fab fa-twitter'></i>
+            <i class='fab fa-instagram'></i>
+            <div class='f'>
+              <input placeholder='Your question'>
+            </div>
+          </div> -->
+          <h5>Topics</h5>
+           <!-- 
+          <div class='stage_inner__articleTwo'>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing eli</h3>
+            <p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</p>
+            <p class='auth'>Delia Freeman</p>
+            <p class='date'>21 Feb 2019</p>
+          </div>-->
+        
+          <div class='stage_inner__article'>
+            <h2 class='fade'>About </h2>
+            <h3>Lorem ipsum dolor sit amet, consectetur adipiscing eli</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing eliLorem ipsum dolor sit amet, consectetur adipiscing eliLorem ipsum dolor sit amet, consectetur adipiscing eli</p>
+            <p class='auth'>Lorem Ipsum </p>
+            <p class='date'>21 Feb 2019</p>
+          </div>
+          
+          
+          <div class='stage_inner__list'>
+            <li>Test &amp; case</li>
+            <li>test Report</li>
+            <li>Analysis</li>
+            <li>Automation</li>
+          </div>
+          <div class='stage_inner__centerbox'>
+            <div class='illustration'></div>
+            <div class='arrow'>
+              <label for='trigger'>
+                <i class="fas fa-arrow-right"></i>
+              </label>
+            </div>
+            <div class='text'>
+              <div class='title'>
+                Lorem Ipsum
+              </div>
+              <div class='articles'>
+                Test test
+              </div>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+  </section>
+
+
+
+
+
+    
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="#" class="facebook-icon">
+                    <img src="./images/icons8-facebook-50.png" alt="Facebook Icon" class="social-icon">
+                </a>
+                <a href="#" class="twitter-icon">
+                    <img src="./images/icons8-twitter-32.png" alt="Twitter Icon" class="social-icon">
+                </a>
+                <a href="#" class="linkedin-icon">
+                    <img src="./images/icons8-linked-in-50.png" alt="LinkedIn Icon" class="social-icon">
+                </a>
+                <a href="#" class="instagram-icon">
+                    <img src="./images/icons8-instagram-50.png" alt="Instagram Icon" class="social-icon">
+                </a>
+            </div>
+            <div class="footer-logo">
+                <img src="./images/LogoGJ.png" alt="Footer Logo">
+            </div>
+            <div class="email">
+                test@yahoo.com
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
